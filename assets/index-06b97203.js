@@ -236,22 +236,22 @@ attempted value: ${s}
         md:border-r-2\r
         md:border-separation-line\r
         md:bg-opacity-0\r
-      `,children:[k.jsx(MC,{isHeader:!1}),k.jsx(z$,{})]})}const ts=0,P0=1;function B$({email:e,password:t,firstName:n,lastName:r,birthDate:i,billSetDefault:o,shipSetDefault:s,addresses:a,sameBillShip:u}){const l=o?ts:void 0;let c=s?ts:void 0;const f=[ts],d=u?[ts]:[P0];return!u&&s&&(c=P0),{email:e,password:t,firstName:n,lastName:r,birthDate:i,addresses:u?[a[ts]]:a,billingAddresses:f,shippingAddresses:d,defaultBillingAddress:l,defaultShippingAddress:c}}function q$(e){const[t,n]=E.useState(0);function r(){n(a=>a>=e.length-1?a:a+1)}function i(){n(a=>a<=0?a:a-1)}function o(){n(0)}const s=e.length;return{reStartForm:o,isFirstStep:t===0,isLastStep:t===e.length-1,currentStepIndex:t,currForm:e[t],formLength:s,next:r,back:i}}const Q$=""+new URL("AccentGulp-c54ed4d1.svg",import.meta.url).href,W$=""+new URL("RedCross-1e9212dd.svg",import.meta.url).href;var IC=(e=>(e[e.ACCOUNT_EXIST=400]="ACCOUNT_EXIST",e[e.NOT_FOUND=404]="NOT_FOUND",e))(IC||{});function H$(e){const{isSuccess:t,reStartForm:n,setIsFormSubmitted:r,error:i}=e;let o="";return i&&"status"in i&&(o=i.status===IC.ACCOUNT_EXIST?"Account with this email is already exist!":""),k.jsx(gC,{children:k.jsxs(ue.div,{initial:{opacity:0,scale:0},animate:{opacity:1,scale:1},transition:{duration:.4},className:` \r
-      ml-3\r
-      mr-3\r
-      box-border\r
-      flex \r
-      w-10/12 \r
-      flex-col \r
-      items-center \r
-      rounded-3xl \r
-      border-2 \r
-      border-separation-line \r
-      pb-2 \r
-      pl-4 \r
-      pr-4 \r
-      pt-2\r
-      sm:w-128\r
+      `,children:[k.jsx(MC,{isHeader:!1}),k.jsx(z$,{})]})}const ts=0,P0=1;function B$({email:e,password:t,firstName:n,lastName:r,birthDate:i,billSetDefault:o,shipSetDefault:s,addresses:a,sameBillShip:u}){const l=o?ts:void 0;let c=s?ts:void 0;const f=[ts],d=u?[ts]:[P0];return!u&&s&&(c=P0),{email:e,password:t,firstName:n,lastName:r,birthDate:i,addresses:u?[a[ts]]:a,billingAddresses:f,shippingAddresses:d,defaultBillingAddress:l,defaultShippingAddress:c}}function q$(e){const[t,n]=E.useState(0);function r(){n(a=>a>=e.length-1?a:a+1)}function i(){n(a=>a<=0?a:a-1)}function o(){n(0)}const s=e.length;return{reStartForm:o,isFirstStep:t===0,isLastStep:t===e.length-1,currentStepIndex:t,currForm:e[t],formLength:s,next:r,back:i}}const Q$=""+new URL("AccentGulp-c54ed4d1.svg",import.meta.url).href,W$=""+new URL("RedCross-1e9212dd.svg",import.meta.url).href;var IC=(e=>(e[e.ACCOUNT_EXIST=400]="ACCOUNT_EXIST",e[e.NOT_FOUND=404]="NOT_FOUND",e))(IC||{});function H$(e){const{isSuccess:t,reStartForm:n,setIsFormSubmitted:r,error:i}=e;let o="";return i&&"status"in i&&(o=i.status===IC.ACCOUNT_EXIST?"Account with this email is already exist!":""),k.jsx(gC,{children:k.jsxs(ue.div,{initial:{opacity:0,scale:0},animate:{opacity:1,scale:1},transition:{type:"spring",stiffness:360,damping:24,duration:.4},className:` 
+      ml-3
+      mr-3
+      box-border
+      flex 
+      w-10/12 
+      flex-col 
+      items-center 
+      rounded-3xl 
+      border-2 
+      border-separation-line 
+      pb-2 
+      pl-4 
+      pr-4 
+      pt-2
+      sm:w-128
     `,children:[k.jsx("h3",{className:"text-5xl font-medium tracking-widest text-text-dark",children:t?"Success!":"Oh snap!"}),k.jsx("p",{className:"text-center text-base text-text-grey",children:t?"Your account has been created":k.jsxs(k.Fragment,{children:[k.jsx("span",{className:"text-text-dark",children:i&&o})," ",k.jsx("br",{}),k.jsx("span",{children:"Change a few things up and try submitting again"})]})}),k.jsx("div",{className:`
         relative
         mt-8
@@ -262,14 +262,14 @@ attempted value: ${s}
         ${t?"border-accent":"border-shop-cart-red"}
         flex
         justify-center
-      `,children:k.jsx("img",{src:t?Q$:W$,alt:""})}),k.jsx(gn,{onClick:()=>{n(),r(!1)},to:t?"/":"/registration",className:`\r
-          mb-9 \r
-          mt-9 \r
-          h-10 \r
-          rounded-lg \r
-          bg-accent \r
-          p-2 \r
-          text-primary\r
+      `,children:k.jsx("img",{src:t?Q$:W$,alt:""})}),k.jsx(gn,{onClick:()=>{n(),r(!1)},to:t?"/":"/registration",className:`
+          mb-9 
+          mt-9 
+          h-10 
+          rounded-lg 
+          bg-accent 
+          p-2 
+          text-primary
         `,children:"Continue"})]})})}function K$(){const e=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,t=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])(?!.*\s).{8,}$/;return Fo({email:Ut().matches(e,{message:"Email must follow email@example.com pattern",excludeEmptyString:!0}).required("Email is required"),password:Ut().min(8,"Minimum 8 symbols required").matches(t,{message:"Password must have A, a, 1, ! symbols",excludeEmptyString:!0}).required("Password is required")})}function G$(){const e=/^[a-zA-Z]+$/,t=new Date,n=new Date(t.getFullYear()-13,t.getMonth(),t.getDate()),r=`${n.getFullYear()} ${n.getMonth()} ${n.getDate()}`;return Fo({firstName:Ut().matches(e,{message:"First name must contain only letters",excludeEmptyString:!0}).max(20,"Too long name").required("First name is required"),lastName:Ut().matches(e,{message:"Last name must contain A, a letters",excludeEmptyString:!0}).max(20,"Too long name").required("Last name is required"),birthDate:Mm().max(r,"Age restriction: 13+").required("Birth date is required")})}function Y$(){const e=/^[a-zA-Z]+$/;return Fo({billCity:Ut().matches(e,{message:"City name must contain only letters",excludeEmptyString:!0}).max(20,"Too long name").required("City name is required"),shipCity:Ut().matches(e,{message:"City name must contain A, a letters",excludeEmptyString:!0}).max(20,"Too long name").required("City name is required")})}function X$(e,t){const n=/^\d{5}(-\d{4})?$/,r=/^\d{5}$/,i=/^(?=.*[a-zA-Z]).*$/;function o(u){switch(u){case"ukraine":case"germany":return r;default:return n}}const s=o(e),a=o(t);return Fo({billPostalCode:Ut().matches(s,{message:"Enter valid postal code",excludeEmptyString:!0}).required("PostalCode is required"),billStreet:Ut().matches(i,{message:"Street name must contain at least one letter",excludeEmptyString:!0}).required("Street name is required"),shipPostalCode:Ut().matches(a,{message:"Enter valid postal code",excludeEmptyString:!0}).required("PostalCode is required"),shipStreet:Ut().matches(i,{message:"Street name must contain at least one letter",excludeEmptyString:!0}).required("Street name is required")})}const T0=""+new URL("postalCodeIcon-8f0e68f8.svg",import.meta.url).href,k0=""+new URL("postalCodeIconRed-2b302867.svg",import.meta.url).href,O0=""+new URL("StreetIcon-f051dd42.svg",import.meta.url).href,R0=""+new URL("StreetIconRed-04be176a.svg",import.meta.url).href;function Ac(e){const{children:t}=e;return k.jsx("form",{className:` \r
       absolute\r
       top-1/2\r
@@ -390,20 +390,20 @@ attempted value: ${s}
             focus:outline-none \r
             md:leading-10\r
             lg:pl-10\r
-            `})}),k.jsx(MC,{isHeader:!0})]})}function mV(){const[e]=ww(),t=Nh(),{updateAccessToken:n,loggedIn:r}=hc.actions;return E.useEffect(()=>{async function i(){const[o,s]=yO(_h,Dh);if(o&&s){t(r({accessToken:o,userId:s}));return}try{const{access_token:a}=await e().unwrap();t(n(a))}catch{}}i()},[e,t,r,n]),k.jsxs("main",{className:`\r
-          mx-auto\r
-          grid\r
-          min-h-screen\r
-          grid-cols-1\r
-          grid-rows-mobGridRows\r
-          font-poppins\r
-          2xl:container\r
-          md:grid-cols-tabGridCols\r
-          md:grid-rows-tabGridRows\r
-          lg:grid-cols-deskGridCols\r
-          `,children:[k.jsx(hV,{}),k.jsx("div",{className:`\r
-            md:col-start-2\r
-            md:col-end-3\r
-            md:row-start-2\r
-            md:row-end-3\r
-            `,children:k.jsxs(iO,{children:[k.jsx(kn,{index:!0,element:k.jsx("p",{children:"Here will be main content"})}),k.jsx(kn,{path:"registration",element:k.jsx(dV,{})}),k.jsx(kn,{path:"login",element:k.jsx(M$,{})}),k.jsx(kn,{path:"profile",element:k.jsx("p",{children:"User profile"})}),k.jsx(kn,{path:"cart",element:k.jsx("p",{children:"Shopping cart"})}),k.jsx(kn,{path:"delivery",element:k.jsx("p",{children:"Delivery"})}),k.jsx(kn,{path:"payment",element:k.jsx("p",{children:"Payment"})}),k.jsx(kn,{path:"about",element:k.jsx("p",{children:"About us"})}),k.jsx(kn,{path:"*",element:k.jsx($A,{})})]})}),k.jsx(U$,{})]})}function vV(){return k.jsx(cO,{children:k.jsx(mV,{})})}const wp=xw({reducerPath:"productApi",baseQuery:Gh,endpoints:e=>({fetchProducts:e.query({query:(t=5)=>({url:`/${ko}/products`,params:{_limit:t}})})})}),yV=cc({[rl.reducerPath]:rl.reducer,[wp.reducerPath]:wp.reducer,[nl.reducerPath]:nl.reducer,[il.reducerPath]:il.reducer,userReducer:DA}),gV=()=>Wx({reducer:yV,middleware:e=>e().concat(wp.middleware).concat(rl.middleware).concat(nl.middleware).concat(il.middleware)}),SV=gV();Uf.createRoot(document.getElementById("root")).render(k.jsx(Sl.StrictMode,{children:k.jsx(vx,{store:SV,children:k.jsx(vV,{})})}));
+            `})}),k.jsx(MC,{isHeader:!0})]})}function mV(){const[e]=ww(),t=Nh(),{updateAccessToken:n,loggedIn:r}=hc.actions;return E.useEffect(()=>{async function i(){const[o,s]=yO(_h,Dh);if(o&&s){t(r({accessToken:o,userId:s}));return}try{const{access_token:a}=await e().unwrap();t(n(a))}catch{}}i()},[e,t,r,n]),k.jsxs("main",{className:`
+          mx-auto
+          grid
+          min-h-screen
+          grid-cols-1
+          grid-rows-mobGridRows
+          font-poppins
+          2xl:container
+          md:grid-cols-tabGridCols
+          md:grid-rows-tabGridRows
+          lg:grid-cols-deskGridCols
+          `,children:[k.jsx(hV,{}),k.jsx("div",{className:`
+            md:col-start-2
+            md:col-end-3
+            md:row-start-2
+            md:row-end-3
+            `,children:k.jsxs(iO,{children:[k.jsx(kn,{index:!0,element:k.jsx("p",{children:"Here will be main content"})}),k.jsx(kn,{path:"registration",element:k.jsx(dV,{})}),k.jsx(kn,{path:"login",element:k.jsx(M$,{})}),k.jsx(kn,{path:"profile",element:k.jsx("p",{children:"User profile"})}),k.jsx(kn,{path:"cart",element:k.jsx("p",{children:"Shopping cart"})}),k.jsx(kn,{path:"delivery",element:k.jsx("p",{children:"Delivery"})}),k.jsx(kn,{path:"payment",element:k.jsx("p",{children:"Payment"})}),k.jsx(kn,{path:"about",element:k.jsx("p",{children:"About us"})}),k.jsx(kn,{path:"*",element:k.jsx($A,{})})]})}),k.jsx(U$,{})]})}function vV(){return k.jsx(cO,{basename:"/eCommerce-Application",children:k.jsx(mV,{})})}const wp=xw({reducerPath:"productApi",baseQuery:Gh,endpoints:e=>({fetchProducts:e.query({query:(t=5)=>({url:`/${ko}/products`,params:{_limit:t}})})})}),yV=cc({[rl.reducerPath]:rl.reducer,[wp.reducerPath]:wp.reducer,[nl.reducerPath]:nl.reducer,[il.reducerPath]:il.reducer,userReducer:DA}),gV=()=>Wx({reducer:yV,middleware:e=>e().concat(wp.middleware).concat(rl.middleware).concat(nl.middleware).concat(il.middleware)}),SV=gV();Uf.createRoot(document.getElementById("root")).render(k.jsx(Sl.StrictMode,{children:k.jsx(vx,{store:SV,children:k.jsx(vV,{})})}));
