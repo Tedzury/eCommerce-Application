@@ -198,9 +198,7 @@ export default function Cart() {
             initial={emptyCartInitial}
             animate={emptyCartAnimate}
             transition={{ ...emptyCartTransition, delay: 0.1 }}
-            className={`text-center text-lg text-text-grey ${
-              isCart ? 'w-fit' : 'lg:w-[150px] xl:w-[300px]'
-            } mx-auto mt-5`}
+            className="mx-auto mt-5 w-fit text-center text-lg text-text-grey"
           >
             <span className="text-3xl font-bold">Your cart is empty!</span> <br />
             <div className="mt-2">
