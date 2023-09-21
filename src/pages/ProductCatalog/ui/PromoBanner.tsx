@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+const PROMOCODE = 'myLovelyPromoCode';
+
 export default function PromoBanner() {
   const [showMessage, setShowMessage] = useState(false);
-
-  const PROMOCODE = 'myLovelyPromoCode';
 
   const handleButtonClick = () => {
     setShowMessage(true);
