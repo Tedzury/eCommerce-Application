@@ -152,16 +152,15 @@ export default function Cart() {
       className={
         isCart
           ? `
-          mx-auto
-          my-16
+          my-[4.5rem]
           flex
           h-full
           flex-col
           px-3
           pb-16
           dark:text-primary
-          sm:px-5
-          md:max-w-[850px]
+          sm:px-24
+          md:max-w-[1024px]
           md:py-12
           lg:mb-0
           `
@@ -182,7 +181,7 @@ export default function Cart() {
       `
       }
     >
-      <h2 className="text-2xl">Your Order</h2>
+      <h2 className="text-2xl font-medium">Your Order</h2>
       {isCartEmpty ? (
         <div className="m-auto grid justify-items-center self-center">
           <motion.img

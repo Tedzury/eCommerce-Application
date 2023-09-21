@@ -51,6 +51,7 @@ export function App() {
           grid-rows-mobGridRows
           font-poppins
           text-base
+          font-medium
           text-text-dark
           2xl:container
           lg:grid-rows-tabGridRows
