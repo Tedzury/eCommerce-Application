@@ -143,7 +143,7 @@ npm run preview
 ### **Design 🎨**
 * [Figma](https://www.figma.com/) - **The Design Tool** 🎨
 * [Project Design](https://www.figma.com/file/rYRBs7GD0vDQDjgjU0n972/eCommerce-Application-%F0%9F%8C%90?type=design&node-id=0%3A1&mode=design&t=asbvxijfRHlGg8Uz-1) - **The Project Design** 😉
-![img_9](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/2bb48054-8bbb-4e70-89f4-e1446e47f665)
+![img_9](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/0d1edaa7-1eb5-4fb2-ad19-1589037968b9)
 
 ### **Version Control 📝**
 * [Git](https://git-scm.com/) - **The Version Control System** 🗂️
@@ -161,19 +161,19 @@ npm run preview
 ### **API 📡**
 * [Commercetools](https://docs.commercetools.com/) - **The API** 🦖
 
-![img_4](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/e4338e4d-7352-44b3-8ef5-e3aa3063ca63)
+![img_4](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/8b582001-a67d-4d09-b8a7-2ebea68d542b)
 
 ### **CI/CD 🚀**
 * [GitHub Actions](https://pages.github.com/) - **The CI/CD** 🕊️
 
-![img_5](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/0d36c736-efa8-4116-9aa8-67f56b443c40)
+![img_5](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/84db0b98-fd9d-4717-a1d3-14919ca63a46)
 
 ### **Project Management 📈**
 * [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) - **The Project Management Tool** 📊
 
-![img_6](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/314fd403-6eaf-49b5-a78a-d7ccfcced64f)
-![image](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/4e282f2d-e225-4e18-95b8-67ce102a0459)
-![img_8](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/2646267e-cba1-4f02-888d-cfe85ff477b3)
+![img_6](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/7cb7743d-2a30-4d68-8c19-2d539e0821c4)
+![img](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/3d6cf309-43d0-47c8-8345-a597a44a683d)
+![img_8](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/2dca6b9b-e2b1-4df2-80ab-f53aff0ccd8a)
 
 ### **Communication 📣**
 * [Discord](https://discord.com/) - **The 3xWeek Meeting Communication Tool** 🗣️
@@ -181,7 +181,7 @@ npm run preview
 
 ### **Project planing 🦍**
 * [Lucidchart](https://www.lucidchart.com/) - **The Project planing Tool** 🧠
-![eCommerce-Application](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/90446667-f0b5-47ec-a083-f17982cd7137)
+![eCommerce-Application](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/5749689e-e893-4359-ae15-15bf3cf968dd)
 
 # Core Development Team 👨‍💻
 
