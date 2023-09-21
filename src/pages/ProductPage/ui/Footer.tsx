@@ -116,7 +116,7 @@ function Footer() {
         type="button"
         className="dark: mt-3 block w-full rounded-md bg-accent-lightest px-4 py-3 text-accent transition-all duration-300 dark:border-2 dark:border-text-grey dark:bg-dark-bg-primary dark:hover:bg-dark-separation-line md:mt-0 md:w-fit"
       >
-        <span className="mx-auto flex w-fit gap-x-2">
+        <span className="mx-auto flex w-44 justify-center gap-x-2">
           <img src={shoppingCart} alt="" />
           <span className="inline-block">{quantity > 0 ? 'Remove from cart' : 'Add to Cart'}</span>
         </span>
