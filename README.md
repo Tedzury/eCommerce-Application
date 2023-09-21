@@ -143,7 +143,7 @@ npm run preview
 ### **Design 🎨**
 * [Figma](https://www.figma.com/) - **The Design Tool** 🎨
 * [Project Design](https://www.figma.com/file/rYRBs7GD0vDQDjgjU0n972/eCommerce-Application-%F0%9F%8C%90?type=design&node-id=0%3A1&mode=design&t=asbvxijfRHlGg8Uz-1) - **The Project Design** 😉
-![img_9](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/2bb48054-8bbb-4e70-89f4-e1446e47f665)
+![img_9](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/0d1edaa7-1eb5-4fb2-ad19-1589037968b9)
 
 ### **Version Control 📝**
 * [Git](https://git-scm.com/) - **The Version Control System** 🗂️
@@ -181,7 +181,7 @@ npm run preview
 
 ### **Project planing 🦍**
 * [Lucidchart](https://www.lucidchart.com/) - **The Project planing Tool** 🧠
-![eCommerce-Application](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/90446667-f0b5-47ec-a083-f17982cd7137)
+![eCommerce-Application](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/5749689e-e893-4359-ae15-15bf3cf968dd)
 
 # Core Development Team 👨‍💻
 
