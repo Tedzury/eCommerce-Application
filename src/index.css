@@ -124,20 +124,19 @@ html {
   background-repeat: no-repeat;
   cursor: pointer;
   transition: all 0.2s ease;
-
-  &:hover {
-    scale: 1.1
-  }
-
-  &:active {
-    translate: 0.5rem;
-  }
 }
 
-.swiper-button-prev-unique {
-  &:active {
-    translate: -0.5rem;
-  }
+.swiper-button-prev-unique:hover,
+.swiper-button-next-unique:hover{
+  scale: 1.1
+}
+
+.swiper-button-next-unique:active {
+  translate: 0.5rem;
+}
+
+.swiper-button-prev-unique:active {
+  translate: -0.5rem;
 }
 
 .swiper-button-prev-unique {
