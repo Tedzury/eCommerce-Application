@@ -201,13 +201,13 @@ export default function Cart() {
             className="mx-auto mt-5 w-fit text-center text-text-grey xl:text-lg"
           >
             <span className="text-xl font-bold xl:text-3xl">Your cart is empty!</span> <br />
-            <div className="mt-2">
+            <span className="mt-2">
               <span className="text-text-grey">Visit </span>
               <Link className="text-accent transition-all hover:text-accent/70" to="/">
                 Product catalog
               </Link>{' '}
               to find good meals :)
-            </div>
+            </span>
           </motion.p>
         </div>
       ) : (
