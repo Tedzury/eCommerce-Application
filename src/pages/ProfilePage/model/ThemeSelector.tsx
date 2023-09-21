@@ -19,16 +19,18 @@ export default function ThemeSelector() {
       setTheme(false);
       localStorage.sushiTheme = 'dark';
       document.documentElement.classList.add('dark');
+      document.body.classList.add('dark:bg-dark-bg-primary');
     } else {
       setTheme(true);
       localStorage.sushiTheme = 'light';
+      document.body.classList.remove('dark:bg-dark-bg-primary');
       document.documentElement.classList.remove('dark');
     }
   }
 
   function handleDefTheme() {
     setDefTheme((prev: boolean) => {
-      if (prev === false) {
+      if (!prev) {
         localStorage.sushiDefThemeUsage = true;
         localStorage.removeItem('sushiTheme');
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
