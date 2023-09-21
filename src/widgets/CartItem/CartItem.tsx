@@ -212,7 +212,7 @@ export default function CartItem(props: ICartItemProps) {
         >
           <MinusIcon />
         </motion.button>
-        <div className="min-w-2 text-lg sm:text-xl">{padZero(quantity)}</div>
+        <div className="w-7 text-center text-lg sm:text-xl">{padZero(quantity)}</div>
         <motion.button
           whileTap={buttonTapAnimation}
           transition={buttonTransition}
