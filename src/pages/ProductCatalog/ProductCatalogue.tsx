@@ -164,7 +164,7 @@ export default function ProductCatalogue() {
         md:py-14
         lg:grid-cols-prodPageDesk
         lg:grid-rows-prodPageDesk
-        lg:pb-10
+        lg:pb-0
         "
       >
         <ProductPageHeader />
