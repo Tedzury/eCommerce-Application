@@ -152,16 +152,15 @@ export default function Cart() {
       className={
         isCart
           ? `
-          mx-auto
-          my-16
+          my-[4.5rem]
           flex
           h-full
           flex-col
           px-3
           pb-16
           dark:text-primary
-          sm:px-5
-          md:max-w-[850px]
+          sm:px-24
+          md:max-w-[1024px]
           md:py-12
           lg:mb-0
           `
@@ -175,14 +174,15 @@ export default function Cart() {
           dark:text-primary
           lg:fixed
           lg:w-[200px]
-          lg:px-10
+          lg:px-4
           lg:py-28
           lg:pb-[210px]
           xl:w-[360px]
+          xl:px-10
       `
       }
     >
-      <h2 className="text-2xl">Your Order</h2>
+      <h2 className="text-xl font-medium xl:text-2xl">Your Order</h2>
       {isCartEmpty ? (
         <div className="m-auto grid justify-items-center self-center">
           <motion.img
@@ -198,18 +198,16 @@ export default function Cart() {
             initial={emptyCartInitial}
             animate={emptyCartAnimate}
             transition={{ ...emptyCartTransition, delay: 0.1 }}
-            className={`text-center text-lg text-text-grey ${
-              isCart ? 'w-fit' : 'lg:w-[150px] xl:w-[300px]'
-            } mx-auto mt-5`}
+            className="mx-auto mt-5 w-fit text-center text-text-grey xl:text-lg"
           >
-            <span className="text-3xl font-bold">Your cart is empty!</span> <br />
-            <div className="mt-2">
+            <span className="text-xl font-bold xl:text-3xl">Your cart is empty!</span> <br />
+            <span className="mt-2">
               <span className="text-text-grey">Visit </span>
               <Link className="text-accent transition-all hover:text-accent/70" to="/">
                 Product catalog
               </Link>{' '}
               to find good meals :)
-            </div>
+            </span>
           </motion.p>
         </div>
       ) : (

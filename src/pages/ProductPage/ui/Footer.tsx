@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import MinusIcon from './MinusIcon';
 import PlusIcon from './PlusIcon';
 import heartAccent from '../../../assets/icons/heart-accent.svg';
@@ -7,6 +9,7 @@ import { AddLineItemRequestBody, RemoveLineItemRequestBody } from '../../../enti
 import { padZero } from '../../../shared/lib/helpers';
 import { useAppSelector, useGetPath } from '../../../shared/lib/hooks';
 import { LineItem } from '../../../shared/types';
+import { buttonTapAnimation, buttonTransition } from '../../../shared/ui/animations.tsx';
 
 function Footer() {
   const { cartId } = useAppSelector((state) => state.userReducer);
@@ -89,38 +92,43 @@ function Footer() {
         <img src={heartAccent} alt="" />
       </button>
       <div className="flex items-center gap-x-4">
-        <button
+        <motion.button
+          whileTap={updateIsLoading ? {} : buttonTapAnimation}
+          transition={buttonTransition}
           disabled={quantity === 0 || updateIsLoading}
           onClick={removeOneFromCart}
-          className={`${updateIsLoading ? 'opacity-30' : ''} ${
+          className={`${
             quantity === 0 ? 'opacity-30' : ''
-          } flex h-8 w-8 items-center justify-center rounded-full border-1 border-text-dark p-2 transition-all duration-300 dark:border-primary dark:hover:bg-dark-separation-line sm:h-8 sm:w-8`}
+          } flex h-8 w-8 items-center justify-center rounded-full border-1 border-text-dark p-2 transition-all dark:border-primary dark:hover:bg-dark-separation-line sm:h-8 sm:w-8`}
           type="button"
         >
           <MinusIcon />
-        </button>
+        </motion.button>
         <span className="dark:text-primary sm:text-xl">{padZero(quantity)}</span>
-        <button
+        <motion.button
+          whileTap={updateIsLoading ? {} : buttonTapAnimation}
+          transition={buttonTransition}
           disabled={updateIsLoading}
           onClick={addToCart}
-          className={`${
-            updateIsLoading ? 'opacity-30' : ''
-          } flex h-8 w-8 items-center justify-center rounded-full border-1 border-text-dark p-2 transition-all duration-300 dark:border-primary dark:hover:bg-dark-separation-line sm:h-8 sm:w-8`}
+          className="flex h-8 w-8 items-center justify-center rounded-full border-1 border-text-dark p-2 transition-all dark:border-primary dark:hover:bg-dark-separation-line sm:h-8 sm:w-8"
           type="button"
         >
           <PlusIcon />
-        </button>
+        </motion.button>
       </div>
-      <button
+      <motion.button
+        whileTap={updateIsLoading ? {} : buttonTapAnimation}
+        transition={buttonTransition}
+        disabled={updateIsLoading}
         onClick={quantity > 0 ? removeAllFromCart : addToCart}
         type="button"
-        className="dark: mt-3 block w-full rounded-md bg-accent-lightest px-4 py-3 text-accent transition-all duration-300 dark:border-2 dark:border-text-grey dark:bg-dark-bg-primary dark:hover:bg-dark-separation-line md:mt-0 md:w-fit"
+        className="mt-3 block w-full rounded-md bg-accent-lightest px-4 py-3 text-accent transition-all dark:border-2 dark:border-text-grey dark:bg-dark-bg-primary dark:hover:bg-dark-separation-line md:mt-0 md:w-fit"
       >
-        <span className="mx-auto flex w-fit gap-x-2">
+        <span className="mx-auto flex w-44 justify-center gap-x-2">
           <img src={shoppingCart} alt="" />
-          <span className="inline-block">{quantity > 0 ? 'Remove from cart' : 'Add to Cart'}</span>
+          <span className="inline-block">{quantity > 0 ? 'Remove from Cart' : 'Add to Cart'}</span>
         </span>
-      </button>
+      </motion.button>
     </div>
   );
 }

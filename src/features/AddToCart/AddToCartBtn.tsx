@@ -43,7 +43,7 @@ export default function AddToCartBtn(props: { productId: string }) {
 
   return (
     <motion.button
-      whileTap={buttonTapAnimation}
+      whileTap={disabled ? {} : buttonTapAnimation}
       transition={buttonTransition}
       type="button"
       disabled={disabled}
@@ -54,7 +54,7 @@ export default function AddToCartBtn(props: { productId: string }) {
       }}
       className={`${
         updateIsLoading ? 'opacity-30' : ''
-      } mt-auto flex h-8 min-w-[30px] max-w-[50px] items-center justify-center self-end rounded-md bg-accent-lightest fill-accent text-2xl transition-all hover:bg-accent/30  disabled:bg-separation-line disabled:text-text-grey`}
+      } mt-auto flex h-8 min-w-[30px] max-w-[50px] items-center justify-center self-end rounded-md bg-accent-lightest fill-accent text-2xl transition-all hover:bg-accent/30  disabled:bg-separation-line disabled:fill-text-grey`}
     >
       <PlusIcon />
     </motion.button>

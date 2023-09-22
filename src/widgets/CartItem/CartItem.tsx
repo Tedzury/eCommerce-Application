@@ -143,7 +143,11 @@ export default function CartItem(props: ICartItemProps) {
             alt={name}
           />
         </div>
-        <div className={`${isCart ? 'min-h-[90px] md:min-h-[160px]' : 'min-h-[98px]'} ml-5 grid`}>
+        <div
+          className={`${
+            isCart ? 'min-h-[90px] md:min-h-[160px]' : 'md:min-h-[60px] xl:min-h-[98px]'
+          } ml-2 grid xl:ml-5`}
+        >
           <h3
             className={`truncate-text ${
               isCart ? 'w-full text-lg xs:text-xl xl:mr-7' : 'lg:text-sm xl:mr-7 xl:text-base'
@@ -152,7 +156,7 @@ export default function CartItem(props: ICartItemProps) {
             {name}
           </h3>
           <p
-            className={`self-end ${
+            className={`self-end md:text-xs xl:text-base ${
               isCart ? 'text-sm text-text-grey sm:inline-block' : 'text-text-grey xl:inline-block'
             }`}
           >
@@ -176,7 +180,11 @@ export default function CartItem(props: ICartItemProps) {
         </button>
         <div className="ml-auto grid w-[max-content] items-center justify-end self-end">
           {oldPrice ? (
-            <span className={`justify-self-end text-text-grey line-through ${isCart ? 'md:text-lg' : ''}`}>
+            <span
+              className={`justify-self-end text-text-grey line-through ${
+                isCart ? 'md:text-lg' : 'lg:text-xs xl:text-base'
+              }`}
+            >
               {oldPrice}
             </span>
           ) : null}
@@ -204,7 +212,7 @@ export default function CartItem(props: ICartItemProps) {
         >
           <MinusIcon />
         </motion.button>
-        <div className="min-w-2 text-lg sm:text-xl">{padZero(quantity)}</div>
+        <div className="w-7 text-center text-lg sm:text-xl">{padZero(quantity)}</div>
         <motion.button
           whileTap={buttonTapAnimation}
           transition={buttonTransition}

@@ -22,6 +22,7 @@ if (
   document.documentElement.classList.add('dark');
   document.body.classList.add('dark:bg-dark-bg-primary');
 } else {
+  document.body.classList.remove('dark:bg-dark-bg-primary');
   document.documentElement.classList.remove('dark');
 }
 
@@ -51,6 +52,7 @@ export function App() {
           grid-rows-mobGridRows
           font-poppins
           text-base
+          font-medium
           text-text-dark
           2xl:container
           lg:grid-rows-tabGridRows

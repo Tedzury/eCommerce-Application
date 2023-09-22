@@ -64,7 +64,7 @@ export const buttonTapAnimation = {
 };
 
 export const buttonTransition = {
-  duration: 0.01,
+  duration: 0.02,
 };
 
 export const itemInitial = {
