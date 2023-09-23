@@ -1,31 +1,36 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
-import logOutIcon from '../../assets/icons/log-out.svg';
-import { COOKIE_ACCESS_TOKEN, userSlice } from '../../entities/user';
-import { COOKIE_REFRESH_TOKEN, COOKIE_USER_ID } from '../../entities/user/consts/constants.ts';
-import { deleteCookie } from '../../shared/lib/helpers';
-import { useAppDispatch, useAppSelector, useRevokeAccessRefreshTokens } from '../../shared/lib/hooks';
+import { useGetCartByIdQuery } from '../../entities/cart';
+import LogOutBtn from '../../features/LogOutBtn/LogOutBtn.tsx';
+import { useAppSelector } from '../../shared/lib/hooks';
 import CartIcon from '../ui/CartIcon.tsx';
 import ContactsIcon from '../ui/ContactsIcon.tsx';
 import MainIcon from '../ui/MenuIcon';
 
-function NavMenu() {
-  const {
-    isLogged,
-    accessToken: oldAccessToken,
-    refreshToken: oldRefreshToken,
-  } = useAppSelector((state) => state.userReducer);
-  const revokeTokens = useRevokeAccessRefreshTokens();
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const { loggedOut } = userSlice.actions;
+const spanInitial = {
+  scale: 0,
+};
 
-  async function handleLogout() {
-    dispatch(loggedOut());
-    navigate('/');
-    deleteCookie(COOKIE_ACCESS_TOKEN, COOKIE_USER_ID, COOKIE_REFRESH_TOKEN);
-    revokeTokens(oldAccessToken, oldRefreshToken);
-  }
+const spanAnimate = {
+  scale: 1,
+};
+
+const spanTransition = {
+  type: 'spring',
+  stiffness: 900,
+  damping: 35,
+};
+
+const spanExit = {
+  scale: 0,
+};
+
+function NavMenu() {
+  const { cartId } = useAppSelector((state) => state.userReducer);
+  const { data: cart } = useGetCartByIdQuery(cartId);
+
+  const cartItemsCount = cart?.totalLineItemQuantity;
 
   return (
     <ul
@@ -33,53 +38,61 @@ function NavMenu() {
         flex
         w-full
         justify-between
-        px-4
-        py-2
-        md:mt-8
-        md:max-h-full
-        md:flex-col
-        md:items-end
-        md:justify-start
-        md:gap-9
-        md:px-0
+        bg-primary
+        p-2
+        dark:bg-dark-bg-primary
         lg:mt-12
+        lg:max-h-full
+        lg:flex-col
+        lg:items-end
+        lg:justify-start
+        lg:gap-9
+        lg:px-0
+        xl:pl-4
         "
     >
       <li className="navMenuItem">
         <NavLink to="/categories/all" className="navMenuLink text-text-grey hover:text-accent">
           {({ isActive, isPending }) => (
-            <>
+            <div className={`py rounded-xl px-2 py-1 ${isActive ? 'bg-accent-lightest lg:bg-opacity-0' : ''}`}>
               <MainIcon isActive={isActive || isPending} /> <span>Our menu</span>
-            </>
+            </div>
           )}
         </NavLink>
       </li>
-      <li className="navMenuItem lg:hidden">
+      <li className="navMenuItem">
         <NavLink to="/cart" className="navMenuLink text-text-grey hover:text-accent">
           {({ isActive, isPending }) => (
-            <>
+            <div className={`py relative rounded-xl px-2 py-1 ${isActive ? 'bg-accent-lightest lg:bg-opacity-0' : ''}`}>
+              <AnimatePresence>
+                {!!cartItemsCount && (
+                  <motion.span
+                    key={cartItemsCount}
+                    initial={spanInitial}
+                    animate={spanAnimate}
+                    transition={spanTransition}
+                    exit={spanExit}
+                    className="absolute -top-2 left-12 flex h-6 w-6 items-center justify-center rounded-full bg-shop-cart-red text-primary lg:left-5"
+                  >
+                    {cartItemsCount}
+                  </motion.span>
+                )}
+              </AnimatePresence>
               <CartIcon isActive={isActive || isPending} /> <span>Cart</span>
-            </>
+            </div>
           )}
         </NavLink>
       </li>
       <li className="navMenuItem">
         <NavLink to="/about" className="navMenuLink text-text-grey hover:text-accent">
           {({ isActive, isPending }) => (
-            <>
+            <div className={`py rounded-xl px-2 py-1 ${isActive ? 'bg-accent-lightest lg:bg-opacity-0' : ''}`}>
               <ContactsIcon isActive={isActive || isPending} /> <span>Contacts</span>
-            </>
+            </div>
           )}
         </NavLink>
       </li>
-      {isLogged && (
-        <li className="navMenuItem hidden md:absolute md:bottom-6 md:block">
-          <button onClick={handleLogout} type="button" className="navMenuLink text-text-dark">
-            <img src={logOutIcon} alt="" className="navMenuIcon md:inline-block" />
-            Log out
-          </button>
-        </li>
-      )}
+      <LogOutBtn isHeader={false} />
     </ul>
   );
 }

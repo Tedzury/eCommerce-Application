@@ -87,11 +87,11 @@ export default function ChangePassword(props: { userData: IUser }) {
 
   return (
     <div>
-      <h4 className="mx-auto mt-12 w-full text-center text-base font-medium">Password</h4>
+      <h4 className="mx-auto mt-12 w-full text-center text-base font-medium dark:text-primary">Password</h4>
       <div className="profileInputWrapper relative">
         <InfoModal msgModalShown={msgModalShown} msgModalText={msgModalText} />
-        <div className="text-base font-medium">Current password</div>
-        <label htmlFor="currPass" className="loginRegLabel mt-5 sm:mt-0 sm:w-[470px]">
+        <div className="text-base font-medium dark:text-primary">Current password</div>
+        <label htmlFor="currPass" className="loginRegLabel mt-5 sm:mt-0 sm:max-w-[350px]">
           <motion.input
             initial={inputAnimation.initial}
             animate={inputAnimation.animate}
@@ -117,8 +117,8 @@ export default function ChangePassword(props: { userData: IUser }) {
         </label>
       </div>
       <div className="profileInputWrapper">
-        <div className="text-base font-medium text-text-dark">New password</div>
-        <label htmlFor="newPass" className="loginRegLabel mt-5 sm:mt-0 sm:w-[470px]">
+        <div className="text-base font-medium text-text-dark dark:text-primary">New password</div>
+        <label htmlFor="newPass" className="loginRegLabel mt-5 sm:mt-0 sm:max-w-[350px]">
           <motion.input
             initial={inputAnimation.initial}
             animate={inputAnimation.animate}
@@ -143,14 +143,16 @@ export default function ChangePassword(props: { userData: IUser }) {
           {touchedAndErrorNewPassword && <ErrorMessage>{errors.newPass}</ErrorMessage>}
         </label>
       </div>
-      <button
-        className="mt-5 h-10 w-full rounded-md bg-accent-lightest text-center text-accent transition-all duration-300 disabled:bg-separation-line disabled:text-text-grey"
-        type="button"
-        disabled={isSaveBlocked}
-        onClick={saveHandler}
-      >
-        Save
-      </button>
+      <div className="flex w-full justify-end">
+        <button
+          className="mt-5 h-10 w-full rounded-md bg-accent-lightest text-center text-accent transition-all duration-300 disabled:bg-separation-line disabled:text-text-grey sm:w-30"
+          type="button"
+          disabled={isSaveBlocked}
+          onClick={saveHandler}
+        >
+          Save
+        </button>
+      </div>
     </div>
   );
 }

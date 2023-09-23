@@ -1,17 +1,15 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import { productApi } from '../../entities/product';
-import { authApi, signUpApi, userDataApi, userReducer } from '../../entities/user';
+import { userReducer } from '../../entities/user';
+import { rootApi, rootAuthApi } from '../../shared/api';
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;
 export type AppDispatch = AppStore['dispatch'];
 
 const rootReducer = combineReducers({
-	[authApi.reducerPath]: authApi.reducer,
-	[productApi.reducerPath]: productApi.reducer,
-	[signUpApi.reducerPath]: signUpApi.reducer,
-	[userDataApi.reducerPath]: userDataApi.reducer,
+	[rootApi.reducerPath]: rootApi.reducer,
+	[rootAuthApi.reducerPath]: rootAuthApi.reducer,
 	userReducer,
 });
 
@@ -20,10 +18,6 @@ export const setupStore = (preloadedState?: Partial<RootState>) =>
 		preloadedState,
 		reducer: rootReducer,
 		middleware: (getDefaultMiddleware) => {
-			return getDefaultMiddleware()
-				.concat(productApi.middleware)
-				.concat(authApi.middleware)
-				.concat(signUpApi.middleware)
-				.concat(userDataApi.middleware);
+			return getDefaultMiddleware().concat(rootApi.middleware).concat(rootAuthApi.middleware);
 		},
 	});

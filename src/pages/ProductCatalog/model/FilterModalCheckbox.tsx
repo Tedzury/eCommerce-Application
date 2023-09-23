@@ -1,3 +1,5 @@
+import { AnimateCounter } from '../../../shared/ui';
+
 export default function FilterModalCheckbox(props: {
   id: string;
   checked: boolean;
@@ -54,13 +56,14 @@ export default function FilterModalCheckbox(props: {
                 before:border-l-4
                 before:border-b-primary
                 before:border-l-primary
+                dark:text-primary
                 ${peer}
               `}
       >
         {text}
       </label>
       <div className="ml-auto h-5 w-5 rounded-md bg-accent-lightest text-center text-xs leading-[20px] text-accent">
-        {itemsNum}
+        <AnimateCounter value={itemsNum} />
       </div>
     </div>
   );

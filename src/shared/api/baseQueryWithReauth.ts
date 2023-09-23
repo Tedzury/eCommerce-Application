@@ -1,11 +1,9 @@
-import { BaseQueryFn, FetchArgs } from '@reduxjs/toolkit/dist/query/react';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import { BaseQueryFn } from '@reduxjs/toolkit/dist/query';
+import { type FetchArgs, FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { Mutex } from 'async-mutex';
 
 import authQuery from './authQuery.ts';
 import baseQuery from './baseQuery.ts';
-import { userSlice } from '../../entities/user';
-import { DEFAULT_CUSTOMER_SCOPE, PROJECT_KEY } from '../const';
 import { ErrorCodeStatus } from '../types';
 
 const mutex = new Mutex();
@@ -16,20 +14,19 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQue
 ) => {
 	await mutex.waitForUnlock();
 
-	const { loggedOut, updateAccessToken } = userSlice.actions;
 	let result = await baseQuery(args, api, extraOptions);
 
 	if (result.error && result.error.status === ErrorCodeStatus.UNAUTHORIZED) {
 		if (!mutex.isLocked()) {
 			const release = await mutex.acquire();
 			try {
-				const refreshResult = await authQuery(
+				const refreshResultAnonToken = await authQuery(
 					{
-						url: `/oauth/${PROJECT_KEY}/anonymous/token`,
+						url: `/oauth/${import.meta.env.VITE_PROJECT_KEY}/anonymous/token`,
 						method: 'POST',
 						params: {
 							grant_type: 'client_credentials',
-							scope: DEFAULT_CUSTOMER_SCOPE,
+							scope: import.meta.env.VITE_DEFAULT_CUSTOMER_SCOPE,
 						},
 					},
 					api,
@@ -37,20 +34,21 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQue
 				);
 
 				if (
-					refreshResult.data &&
-					typeof refreshResult.data === 'object' &&
-					'access_token' in refreshResult.data &&
-					'refresh_token' in refreshResult.data
+					refreshResultAnonToken.data &&
+					typeof refreshResultAnonToken.data === 'object' &&
+					'access_token' in refreshResultAnonToken.data &&
+					'refresh_token' in refreshResultAnonToken.data
 				) {
-					api.dispatch(
-						updateAccessToken({
-							accessToken: refreshResult.data.access_token as string,
-							refreshToken: refreshResult.data.refresh_token as string,
-						}),
-					);
+					api.dispatch({
+						type: 'user/updateAccessToken',
+						payload: {
+							accessToken: refreshResultAnonToken.data.access_token as string,
+							refreshToken: refreshResultAnonToken.data.refresh_token as string,
+						},
+					});
 					result = await baseQuery(args, api, extraOptions);
 				} else {
-					api.dispatch(loggedOut());
+					api.dispatch({ type: 'user/loggedOut' });
 				}
 			} finally {
 				release();

@@ -1,8 +1,9 @@
-interface IInitialState {
+export interface IInitialState {
 	accessToken: string;
 	isLogged: boolean;
 	userId: string;
 	refreshToken: string;
+	cartId: string;
 }
 
 const initialState: IInitialState = {
@@ -10,6 +11,7 @@ const initialState: IInitialState = {
 	isLogged: false,
 	userId: '',
 	refreshToken: '',
+	cartId: '',
 };
 
 export default initialState;

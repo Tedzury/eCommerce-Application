@@ -126,7 +126,8 @@ function LoginPage() {
               text-text-grey
               sm:pl-10
               sm:pr-10
-              md:mt-10
+              lg:mt-10
+              lg:w-[29.9rem]
               "
         >
           <h5
@@ -134,6 +135,7 @@ function LoginPage() {
                 pt-4
                 text-2xl
                 text-text-dark
+                dark:text-primary
                 "
           >
             Log in

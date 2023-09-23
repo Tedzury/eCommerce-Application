@@ -1,17 +1,12 @@
-import { createApi } from '@reduxjs/toolkit/dist/query/react';
-
-import baseQueryWithReauth from '../../../shared/api/baseQueryWithReauth.ts';
-import { PROJECT_KEY } from '../../../shared/const';
+import { rootApi } from '../../../shared/api';
 import { ILoginUserDataResponse, ILoginUserParams, IUser } from '../../../shared/types';
 import { IUpdateUserAddressParams, IUpdateUserDataParams, IUpdateUserPassword } from '../types/interfaces.ts';
 
-export const userDataApi = createApi({
-	reducerPath: 'userDataApi',
-	baseQuery: baseQueryWithReauth,
+export const userDataApi = rootApi.injectEndpoints({
 	endpoints: (build) => ({
 		loginUserData: build.mutation<ILoginUserDataResponse, ILoginUserParams>({
 			query: (loginData) => ({
-				url: `/${PROJECT_KEY}/login`,
+				url: `/${import.meta.env.VITE_PROJECT_KEY}/login`,
 				method: 'POST',
 				body: JSON.stringify(loginData),
 			}),
@@ -19,13 +14,13 @@ export const userDataApi = createApi({
 
 		getUser: build.query<IUser, string>({
 			query: (id) => ({
-				url: `${PROJECT_KEY}/customers/${id}`,
+				url: `${import.meta.env.VITE_PROJECT_KEY}/customers/${id}`,
 			}),
 		}),
 
 		deleteUserData: build.mutation<void, IUpdateUserDataParams>({
 			query: (body) => ({
-				url: `${PROJECT_KEY}/me`,
+				url: `${import.meta.env.VITE_PROJECT_KEY}/me`,
 				method: 'POST',
 				body: JSON.stringify(body),
 			}),
@@ -33,7 +28,7 @@ export const userDataApi = createApi({
 
 		updateUserData: build.mutation<void, IUpdateUserDataParams>({
 			query: (body) => ({
-				url: `${PROJECT_KEY}/me`,
+				url: `${import.meta.env.VITE_PROJECT_KEY}/me`,
 				method: 'POST',
 				body: JSON.stringify(body),
 			}),
@@ -41,7 +36,7 @@ export const userDataApi = createApi({
 
 		updateUserAddress: build.mutation<void, IUpdateUserAddressParams>({
 			query: ({ body, id }) => ({
-				url: `${PROJECT_KEY}/customers/${id}`,
+				url: `${import.meta.env.VITE_PROJECT_KEY}/customers/${id}`,
 				method: 'POST',
 				body: JSON.stringify(body),
 			}),
@@ -49,7 +44,7 @@ export const userDataApi = createApi({
 
 		updateUserPassword: build.mutation<void, IUpdateUserPassword>({
 			query: (body) => ({
-				url: `${PROJECT_KEY}/me/password`,
+				url: `${import.meta.env.VITE_PROJECT_KEY}/me/password`,
 				method: 'POST',
 				body: JSON.stringify(body),
 			}),

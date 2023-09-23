@@ -7,20 +7,22 @@ function NavBlock() {
       className="
         fixed
         bottom-0 
-        z-50
-        h-14
+        z-20
+        h-fit
         w-full
-        bg-separation-line
-        md:col-start-1
-        md:col-end-2
-        md:row-start-2
-        md:row-end-3
-        md:h-full
-        md:w-44
-        md:border-r-2
-        md:border-separation-line
-        md:bg-opacity-0
-        lg:w-[22rem]
+        dark:bg-dark-separation-line
+        lg:col-start-1
+        lg:col-end-2
+        lg:row-start-2
+        lg:row-end-3
+        lg:h-full
+        lg:w-44
+        lg:border-r-2
+        lg:border-separation-line
+        lg:bg-primary
+        lg:dark:border-dark-separation-line
+        lg:dark:bg-dark-bg-primary
+        xl:w-[22rem]
       "
     >
       <UserProfileLink isHeader={false} />

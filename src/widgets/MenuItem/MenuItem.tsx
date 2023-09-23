@@ -5,7 +5,9 @@ import StarsRating from 'react-star-rate';
 
 import spicyIcon from '../../assets/icons/spicy.svg';
 import veganIcon from '../../assets/icons/vegan.svg';
-import { correctPrice, ProductAttribute, ProductAttributeNames } from '../../entities/product';
+import { ProductAttribute, ProductAttributeNames } from '../../entities/product';
+import formatPrice from '../../entities/product/lib/helpers/formatPrice.ts';
+import pennieToMoney from '../../entities/product/lib/helpers/pennieToMoney.ts';
 import { ProductPrice } from '../../entities/product/types/types.ts';
 import AddToCartBtn from '../../features/AddToCart/AddToCartBtn';
 import getAttribute from '../../pages/ProductPage/lib/helpers/getAttribute.ts';
@@ -24,27 +26,31 @@ export default function MenuItem({ name, image, id, attributes, prices, isSpicy,
   const [rating, setRating] = useState(4.5);
   const [isLoading, setIsLoading] = useState(true);
 
-  const discountPrice = getAttribute(attributes, ProductAttributeNames.DISCOUNT_PRICE);
+  const {
+    discounted: { value: { centAmount: discountPrice = undefined } = {} } = {},
+    value: { centAmount: currPrice, currencyCode },
+  } = prices.at(0) as ProductPrice;
+
+  const centPrice = discountPrice ?? currPrice;
+  const centOldPrice = discountPrice ? currPrice : null;
+
   const calories = getAttribute(attributes, ProductAttributeNames.CALORIES);
   const weight = getAttribute(attributes, ProductAttributeNames.WEIGHT);
-  const price = prices[0].value.centAmount;
-  const rawPrice = discountPrice ?? price;
-  const rawOldPrice = discountPrice ? price : null;
 
-  const corePrice = correctPrice(Number(rawPrice));
-  const oldPrice = rawOldPrice ? correctPrice(rawOldPrice) : null;
+  const corePrice = formatPrice(pennieToMoney(centPrice), currencyCode);
+  const oldPrice = centOldPrice ? formatPrice(pennieToMoney(centOldPrice), currencyCode) : null;
 
   return (
     <li className="w-full list-none">
       <Link to={`/product/${id}`}>
-        <div className="flex rounded-2xl border-1 border-border-black/10 transition delay-150 duration-300 ease-in-out hover:bg-accent-light">
-          <div className="m-h-[170px] relative flex flex-[75%] gap-x-3 sm:gap-x-7">
+        <div className="flex h-[170px] rounded-2xl border-1 border-border-black/10 pr-4 transition-all ease-in-out hover:bg-accent-light dark:border-dark-separation-line dark:hover:bg-dark-separation-line md:pr-8">
+          <div className="relative flex flex-[75%] gap-x-4 sm:gap-x-7">
             <img
               onLoad={() => setIsLoading(false)}
               loading="lazy"
               className={`${
                 isLoading ? 'h-full w-48 opacity-0' : 'opacity-100'
-              } inline-block h-full max-w-[45%] flex-none rounded-2xl object-cover transition-all duration-300 ease-bounce xs:max-w-[30%] xl:max-w-[19.5%]`}
+              } inline-block h-full max-w-[50%] flex-none rounded-2xl object-cover transition-all duration-300 ease-bounce md:w-[160px]`}
               src={image}
               alt={name}
             />
@@ -53,15 +59,15 @@ export default function MenuItem({ name, image, id, attributes, prices, isSpicy,
                 <img src={isSpicy ? spicyIcon : veganIcon} alt={`${isSpicy ? 'spicyIcon' : 'veganIcon'}`} />
               </span>
             ) : null}
-            <div className="my-4 flex flex-col gap-y-2 xs:gap-y-3 sm:my-7">
-              <div className="flex w-fit flex-1 flex-col gap-y-3">
-                <h2 className="text-text-dark sm:text-xl">{name}</h2>
-                <div>
-                  <h4 className="text-sm text-text-grey">{calories} kcal</h4>
-                  <h4 className="text-sm text-text-grey">{weight} g</h4>
+            <div className="flex flex-col justify-center gap-y-3 py-4 md:py-7">
+              <div className="flex flex-col gap-y-3">
+                <div className="truncate-text mr-3 text-lg text-text-dark dark:text-primary lg:mr-7">{name}</div>
+                <div className="grid gap-1">
+                  <h4 className="text-text-grey">{calories} kcal</h4>
+                  <h4 className="text-text-grey">{weight} g</h4>
                 </div>
               </div>
-              <div className="mb-2 flex w-fit items-center gap-x-2">
+              <div className="flex max-w-[40px] items-center gap-x-2">
                 <StarsRating
                   value={rating}
                   allowHalf
@@ -73,14 +79,12 @@ export default function MenuItem({ name, image, id, attributes, prices, isSpicy,
               </div>
             </div>
           </div>
-          <div className="my-4 flex flex-auto flex-col items-end justify-between pr-3.5 sm:my-7 sm:pr-7">
-            <div className="grid">
-              {oldPrice ? (
-                <span className="justify-self-end text-sm text-text-grey line-through md:text-base">$ {oldPrice}</span>
-              ) : null}
-              <h3 className="text-base font-medium text-text-dark sm:text-xl">$ {corePrice}</h3>
-            </div>
-            <AddToCartBtn />
+          <div className="flex flex-col items-end justify-end py-4 md:py-7">
+            {oldPrice ? (
+              <span className="justify-self-end text-sm text-text-grey line-through md:text-base">{oldPrice}</span>
+            ) : null}
+            <h3 className="mt-1 text-lg font-semibold text-text-dark dark:text-primary lg:text-lg">{corePrice}</h3>
+            <AddToCartBtn productId={id} />
           </div>
         </div>
       </Link>

@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 
-import userPic from '../../assets/img/UserImg.jpg';
+import getGreeting from './helpers/getGreeting';
 import { getFullName, useGetUserQuery } from '../../entities/user';
 import { useAppSelector } from '../../shared/lib/hooks';
+import UserIcon from '../../shared/ui/UserIcon';
 
-const headerLoggedClass = 'block md:hidden';
+const headerLoggedClass = 'block lg:hidden';
 const menuLoggedClass =
-  'hidden w-full justify-center gap-3 text-text-grey md:mt-28 md:flex md:flex-col md:items-center lg:mt-28 lg:flex-row';
+  'hidden w-full justify-center gap-3 text-text-grey lg:mt-28 lg:flex lg:flex-col lg:items-center xl:flex-row';
 
 function UserProfileLink(props: { isHeader: boolean }) {
   const { isLogged, userId } = useAppSelector((state) => state.userReducer);
@@ -15,13 +16,17 @@ function UserProfileLink(props: { isHeader: boolean }) {
   const { isHeader } = props;
   const userFullName = getFullName(data?.firstName, data?.lastName);
 
+  const hours = new Date().getHours();
+
+  const greeting = getGreeting(hours);
+
   if (isLogged) {
     return (
       <Link
         to="/profile"
         className={`${isHeader ? headerLoggedClass : menuLoggedClass} ${isLoading ? 'animate-pulse' : ''}`}
       >
-        <img src={userPic} alt="user avatar" className={isHeader ? 'mr-2 w-8 rounded-full' : 'w-12 rounded-xl'} />
+        <UserIcon isHeader={isHeader} />
         <div className={isHeader ? 'hidden' : ''}>
           <h5
             className="
@@ -30,18 +35,20 @@ function UserProfileLink(props: { isHeader: boolean }) {
                 text-ellipsis 
                 text-xl
                 text-text-dark
+                dark:text-primary 
                 md:text-center 
-                lg:w-full 
-                lg:text-start"
+                xl:w-full
+                xl:text-start
+            "
           >
             {userFullName}
           </h5>
           <h6
             className="
                 md:text-center
-                lg:text-start"
+                xl:text-start"
           >
-            Good morning!
+            {greeting}
           </h6>
         </div>
       </Link>
@@ -53,30 +60,30 @@ function UserProfileLink(props: { isHeader: boolean }) {
         className={`
         ${
           isHeader
-            ? 'mr-2 h-8 pl-1 pr-1 text-sm leading-8 md:hidden'
-            : 'mt-28 hidden h-10 w-3/5 md:block lg:mt-28 lg:w-2/5'
+            ? 'mr-2 flex h-9 items-center px-2 text-sm leading-8 lg:hidden'
+            : 'mt-28 hidden h-10 w-3/5 lg:mt-28 lg:block'
         }
         rounded-md
-        bg-accent
-        text-center
+        bg-accent-lightest
+        text-center 
         leading-10 
-        text-primary 
-        md:ml-6
-        lg:ml-16`}
+        text-accent
+        lg:ml-6
+        xl:ml-14`}
         to="/login"
       >
         Log&nbsp;in
       </Link>
       <Link
         className={`
-        ${isHeader ? 'mr-2 h-8 pl-1 pr-1 text-sm leading-8 md:hidden' : 'mt-3 hidden h-10 w-3/5 md:block lg:w-2/5'}
+        ${isHeader ? 'mr-2 flex h-9 items-center px-2 text-sm leading-8 lg:hidden' : 'mt-3 hidden h-10 w-3/5 lg:block'}
         rounded-md
         bg-accent
         text-center
         leading-10 
-        text-primary 
-        md:ml-6
-        lg:ml-16`}
+        text-accent-lightest 
+        lg:ml-6
+        xl:ml-14`}
         to="/registration"
       >
         Sign&nbsp;Up
