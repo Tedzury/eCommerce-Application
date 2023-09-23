@@ -165,7 +165,7 @@ npm run preview
 * [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) - **The Project Management Tool** 📊
 
 ![img_6](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/7cb7743d-2a30-4d68-8c19-2d539e0821c4)
-![img](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/3d6cf309-43d0-47c8-8345-a597a44a683d)
+![img_1](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/0082f31f-26fe-4458-9f6b-fcfcc5f079eb)
 ![img_8](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/2dca6b9b-e2b1-4df2-80ab-f53aff0ccd8a)
 
 ### **Communication 📣**
