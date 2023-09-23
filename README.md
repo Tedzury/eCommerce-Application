@@ -180,6 +180,8 @@ npm run preview
 
 ### **Bohdan Shcherbyna** - **Front-end Developer / Team Lead** 🦁
 
+<img height="400px" src="src/assets/img/Bogdan.jpg">
+
 ### Contribution 🪄:
 * Working with the API 🌐
 * Managing the Redux store 🏪
@@ -200,6 +202,9 @@ npm run preview
 #
 
 ### **Oleksii Drohachov** - **Front-end Developer** 🦈
+
+<img height="400px" src="src/assets/img/Oleksii.jpg">
+
 ### Contribution 🪄:
 * Managing the app router 🛖
 * Code review 🔫
@@ -220,6 +225,9 @@ npm run preview
 #
 
 ### **Harry Holubiev** - **Front-end Developer** 🐲
+
+<img height="400px" src="src/assets/img/Harry.jpg">
+
 ### Contribution 🪄:
 * Designed product card 🎴
 * Product page 📄
