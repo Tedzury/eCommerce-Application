@@ -185,27 +185,68 @@ npm run preview
 
 # Core Development Team 👨‍💻
 
-### **Bohdan Shcherbyna** ([Quiddlee](https://github.com/Quiddlee)) - **Front-end Developer / Team Lead** 🦁
-### Contribution:
-* Working with API, Managing App State, Animations, UI / UX Design, Code Review, Testing, Deployment, Documentation, CI/CD ✨.
+### **Bohdan Shcherbyna** - **Front-end Developer / Team Lead** 🦁
+
+### Contribution 🪄:
+* Working with the API 🌐
+* Managing the Redux store 🏪
+* Animations 🦕
+* UI/UX Design 🍭
+* Code review 🔫
+* Testing 🧪
+* Deployment 🚀
+* Documentation 📃
+* CI/CD ✨
+
+### Contact 👋:
+* Email - ```bogdanscherbinadev@gmail.com``` 📬
+* Linkedin - [Bohdan Shcherbyna](https://www.linkedin.com/in/quiddle/) ✒️
+* Telegram - [@Quiddle](https://t.me/quiddle) 📱
+* GitHub - [Quiddlee](https://github.com/Quiddlee) 🦉
 
 #
 
-### **Oleksii Drohachov** ([Tedzury](https://github.com/Tedzury)) - **Front-end Developer** 🦈
-### Contribution:
-* Managing App router, Code Review, Documentation, Working with CommerceTools data, Managing App Products, Fully implement user profile page, UI Layout, Project setup, Working with API 🩺.
+### **Oleksii Drohachov** - **Front-end Developer** 🦈
+### Contribution 🪄:
+* Managing the app router 🛖
+* Code review 🔫
+* Documentation 📃
+* Working with CommerceTools data 💀
+* Managing app products 💎
+* Fully implement user profile page 💪
+* UI layout 🦥
+* Project setup 💫
+* Working with the API 🩺
+
+### Contact 👋:
+* Email - ```asdrogachev@gmail.com``` 📬
+* Linkedin - [Oleksii Drohachov](https://www.linkedin.com/in/oleksii-drohachov-b127a9245/) ✒️
+* Telegram - [@Tedzury](https://t.me/tedzury) 📱
+* GutHub - [Tedzury](https://github.com/Tedzury) 🦉
 
 #
 
-### **Harry Holubiev** ([barrydilan](https://github.com/barrydilan)) - **Front-end Developer** 🐲
-### Contribution:
-* Designed Product Card, Product Page, Logo and animations, implemented some features in Cart component, Managing App router, Code Review, Documentation, UI Layout, Working with API 🪄.
+### **Harry Holubiev** - **Front-end Developer** 🐲
+### Contribution 🪄:
+* Designed product card 🎴
+* Product page 📄
+* Logo and animations 🍣
+* implemented some features in Cart component 🛒
+* Managing the app router 🛖
+* Code review 🔫
+* Documentation 📃
+* UI Layout 🦥
+* Working with the API 🪄
+
+### Contact 👋:
+* Email - ```queharambe@gmail.com``` 📬
+* GitHub - [barrydilan](https://github.com/barrydilan) 🦉
 
 # Adding products data to commerce tools 🦩:
 Here you can find detailed instructions on how to add products data to commercetools 🕵️. To add data with products in commercetools we prepared [fully setted up repo](https://github.com/Tedzury/commercetools-sushisushi-data) for you 🫂.
 
 If you want exactly the same products as we have 😏:
-* You need to follow all the [Installation and Preparation](#Installation-and-Preparation) steps. ⛔
+* You need to follow all the [Installation and Preparation](#Installation And Preparation) steps. ⛔
 * Aaand type a few 🤏 commands into the terminal to upload all the data into your commercetools account! 🤩
 
 
