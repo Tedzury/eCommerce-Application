@@ -109,6 +109,42 @@ npm run build
 npm run preview
 ```
 
+# Features 🚀
+
+* **Browse The World Of Royal Asian Flavour Meals! 😃🍣**
+
+![gif-1](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/3d3e9cfe-20cc-4f67-8890-08748e8fdc31)
+
+* **Choose The Meal You Like The Most 😋🍴**
+
+<img src="https://github.com/Quiddlee/eCommerce-Application/assets/114234698/6e3ef9f9-ec15-421d-83f3-a9bdc2beeac2" width="800px">
+
+* **Fill Your Shopping Cart 🛍️🛒**
+
+![gif-2](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/df2b1cb3-ba0d-43be-9aeb-80ecd9d5a16e)
+
+* **Search For Your Lovely Meals! 🔍**
+
+![gif-3](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/fbd16e70-1095-4726-a915-758c8fb1d71d)
+
+* **Filter The Results To Make Easier Your Search 😊**
+
+![gif-4](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/3cec92b9-0c43-4af6-98cc-054a1739fe9f)
+
+* **Sign Up Your Account! 🌌**
+
+![gif-6](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/d5a7ccfb-8ad6-42a3-856b-3b53e6f0dc7c)
+
+* **Change Your Data At Any Time 👌**
+
+![gif-5](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/6e8138e9-66ef-468e-b009-6a1d1106ebeb)
+
+* **And Much Much More Features, Try By Yourself 😉!**
+
+<img src="https://github.com/Quiddlee/eCommerce-Application/assets/114234698/42d15ba0-1594-45e8-a54b-a36f503f81e5" height="500px">
+<img src="https://github.com/Quiddlee/eCommerce-Application/assets/114234698/4a5838f3-7cf1-4d48-868a-a2e706ee9903" height="500px">
+<img src="https://github.com/Quiddlee/eCommerce-Application/assets/114234698/4077c659-9d4e-4bda-a9f8-c80b55ee6f42" height="500px">
+
 # Technology Stack ⚙️
 
 ### **Developing 😍**
