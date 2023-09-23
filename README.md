@@ -145,18 +145,11 @@ npm run preview
 * [Project Design](https://www.figma.com/file/rYRBs7GD0vDQDjgjU0n972/eCommerce-Application-%F0%9F%8C%90?type=design&node-id=0%3A1&mode=design&t=asbvxijfRHlGg8Uz-1) - **The Project Design** 😉
 ![img_9](https://github.com/Quiddlee/eCommerce-Application/assets/114234698/0d1edaa7-1eb5-4fb2-ad19-1589037968b9)
 
-### **Version Control 📝**
-* [Git](https://git-scm.com/) - **The Version Control System** 🗂️
-* [GitHub](https://github.com/) - **The Version Control Hosting** 🗄️
-
 ### **Git Methodology**
 * [Git Flow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) - **The Git Flow** 🌊
 
 ### **Architecture 🏛️**
 * [Feature Sliced Design](https://feature-sliced.design/) - **The Architecture** 🏛️
-
-### **Hosting 🌐**
-* [GitHub Pages](https://pages.github.com/) - **The Hosting** 🏠
 
 ### **API 📡**
 * [Commercetools](https://docs.commercetools.com/) - **The API** 🦖
