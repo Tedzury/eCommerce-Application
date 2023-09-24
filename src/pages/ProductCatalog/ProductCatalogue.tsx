@@ -160,7 +160,7 @@ export default function ProductCatalogue() {
         grid-cols-1
         grid-rows-prodPageMob
         px-[10px]
-        md:px-12
+        md:px-10
         md:py-14
         lg:grid-cols-prodPageDesk
         lg:grid-rows-prodPageDesk

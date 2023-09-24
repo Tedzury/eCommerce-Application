@@ -15,7 +15,9 @@ function CategoriesList({ children, changeActiveCat }: ICategoryList) {
           mt-6
           bg-none
           text-text-grey
+          lg:mr-2
           lg:mt-11
+          lg:overflow-y-scroll
         "
     >
       <ul
