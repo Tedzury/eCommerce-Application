@@ -380,7 +380,9 @@ and limitations under the License.
           mt-6
           bg-none
           text-text-grey
+          lg:mr-2
           lg:mt-11
+          lg:overflow-y-scroll
         `,children:m.jsx("ul",{onClick:n=>t(n),className:`
             flex
             h-8
@@ -512,7 +514,7 @@ and limitations under the License.
         grid-cols-1
         grid-rows-prodPageMob
         px-[10px]
-        md:px-12
+        md:px-10
         md:py-14
         lg:grid-cols-prodPageDesk
         lg:grid-rows-prodPageDesk
