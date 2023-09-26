@@ -3,6 +3,8 @@
 *RS-School 🦥 eCommerce-Application. Stage 2 Final Task RS2023Q1* 🧙‍ <br>
 ️***SushiSushi** - Is not just your regular food delivery; it's a culinary journey to Japan's finest flavors, delivered to your doorstep 😉.* 
 
+**🏆🥳 One of the best RS2023Q1 [graduation projects](https://discord.com/channels/516715744646660106/1072962541812191423/1156268411123408926)!**
+
 **Task description** - [Task description](https://github.com/rolling-scopes-school/tasks/tree/master/tasks/eCommerce-Application) 📝 <br>
 **Deployed project preview** - [SushiSushi](https://quiddlee.github.io/eCommerce-Application/) 👀
 
