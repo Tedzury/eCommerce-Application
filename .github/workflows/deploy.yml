@@ -10,6 +10,7 @@ env:
   NODE_VERSION: 18.16.0
 
 jobs:
+  
   deploy:
     name: Build And Deploy
     runs-on: ubuntu-latest
