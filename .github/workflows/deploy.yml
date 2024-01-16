@@ -1,9 +1,7 @@
 name: Pull Request
 
 on:
-  pull_request:
-    types:
-      - closed
+  push
 
 permissions:
   contents: write
@@ -12,8 +10,7 @@ env:
   NODE_VERSION: 18.16.0
 
 jobs:
-  if_merged:
-    if: github.event.pull_request.merged == true
+  deploy:
     name: Build And Deploy
     runs-on: ubuntu-latest
 
